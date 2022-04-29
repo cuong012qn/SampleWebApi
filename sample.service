@@ -1,0 +1,14 @@
+[Unit]
+Description=SampleWebAPI
+
+[Service]
+WorkingDirectory=/var/SampleWebApi/SampleWebApi/build
+ExecStart=/var/SampleWebApi/SampleWebApi/build/SampleWebApi.dll
+Restart=always
+# Restart service after 10 seconds if the dotnet service crashes:
+RestartSec=10
+KillSignal=SIGINT
+SyslogIdentifier=SampleWebAPI
+
+[Install]
+WantedBy=multi-user.target
